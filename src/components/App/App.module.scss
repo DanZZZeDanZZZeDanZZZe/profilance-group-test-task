@@ -1,0 +1,7 @@
+.page-wrapper {
+  background-color: rgb(251, 236, 218);
+  height: calc(100vh - var(--header-height));
+  display: flex;
+  padding-top: 1rem;
+  justify-content: center;
+}
