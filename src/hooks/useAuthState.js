@@ -36,6 +36,8 @@ export const useAuthState = () => {
 
   return {
     isSuccess: Boolean(authData?.isSuccess),
+    isAdmin: Boolean(authData?.isSuccess && authData?.isAdmin),
+    isUser: Boolean(authData?.isSuccess && !authData?.isAdmin),
     login: authData?.login,
     errorMessage: authData?.message ?? null,
     tryAuth,
