@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { Link } from 'react-router-dom';
+import { AppContext } from '../App';
 
 import styles from './Header.module.scss';
 
 export const Header = () => {
+  const { authPopUp, auth } = useContext(AppContext);
+
   return (
     <header className={styles['header']}>
       <nav className={styles['header__nav']}>
@@ -16,7 +19,15 @@ export const Header = () => {
         </Link>
         <Link to='/news'>News</Link>
       </nav>
-      <button type='button'>Вход</button>
+      {auth.isSuccess ? (
+        <button type='button' onClick={auth.close}>
+          Выход
+        </button>
+      ) : (
+        <button type='button' onClick={authPopUp.open}>
+          Вход
+        </button>
+      )}
     </header>
   );
 };
