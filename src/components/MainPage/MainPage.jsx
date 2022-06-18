@@ -11,6 +11,7 @@ export const MainPage = () => {
     <>
       <AuthPopUp />
       <div className={styles['main-page']}>
+        <h1>{auth.isSuccess ? `привет ${auth.login}` : 'привет гость'}</h1>
       </div>
     </>
   );
