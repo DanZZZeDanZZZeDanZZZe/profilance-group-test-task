@@ -14,14 +14,13 @@ const USERS = {
 export const __checkAuth__ = (login, password) => {
   if (login in USERS && password === USERS[login].password) {
     return {
-      success: true,
-      user: login,
+      isSuccess: true,
+      login,
       isAdmin: USERS[login].isAdmin,
     };
   }
-
   return {
-    success: false,
+    isSuccess: false,
     message: ERROR_MESSAGE,
   };
 };
