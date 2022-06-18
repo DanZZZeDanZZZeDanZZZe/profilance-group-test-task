@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { usePopUpState, useAuthState } from '../../hooks';
+import { usePopUpState, useAuthState, useNewsState } from '../../hooks';
 import { Header } from '../Header/Header';
 import { MainPage } from '../MainPage';
 import { NewsPage } from '../NewsPage';
@@ -12,13 +12,14 @@ export const AppContext = React.createContext();
 export const App = () => {
   const authPopUp = usePopUpState();
   const auth = useAuthState();
-  console.log(auth, authPopUp);
+  const news = useNewsState();
 
   return (
     <AppContext.Provider
       value={{
         authPopUp,
         auth,
+        news,
       }}
     >
       <BrowserRouter>
