@@ -1,0 +1,18 @@
+.project-button {
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius);
+  border-style: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 100ms;
+  padding: .5rem 1rem;
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+}
+
+.project-box {
+  background-color: var(color-background);
+  border-radius: var(--border-radius);
+}

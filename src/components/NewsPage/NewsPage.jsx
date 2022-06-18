@@ -3,6 +3,8 @@ import { usePopUpState } from '../../hooks';
 import { AppContext } from '../App';
 
 import styles from './NewsPage.module.scss';
+import commonStyles from '../../common-styles.module.scss';
+
 import { PopUp } from '../PopUp';
 
 const AddNewsContols = ({ addNewsHandler }) => {
@@ -30,11 +32,17 @@ const AddNewsContols = ({ addNewsHandler }) => {
               <label htmlFor='text'>text</label>
               <input type='text' name='text' placeholder='text' />
             </div>
-            <button>Добавить новость</button>
+            <button className={commonStyles['project-button']}>
+              Добавить новость
+            </button>
           </form>
         </PopUp>
       )}
-      <button type='button' onClick={popUp.open}>
+      <button
+        type='button'
+        className={commonStyles['project-button']}
+        onClick={popUp.open}
+      >
         Добавить новость
       </button>
     </>
@@ -57,11 +65,19 @@ export const NewsPage = () => {
             {auth.isAdmin && (
               <>
                 {!isApproved && (
-                  <button type='button' onClick={() => news.approve(id)}>
+                  <button
+                    type='button'
+                    className={commonStyles['project-button']}
+                    onClick={() => news.approve(id)}
+                  >
                     Одобрить новость
                   </button>
                 )}
-                <button type='button' onClick={() => news.remove(id)}>
+                <button
+                  type='button'
+                  className={commonStyles['project-button']}
+                  onClick={() => news.remove(id)}
+                >
                   Удалить новость
                 </button>
               </>

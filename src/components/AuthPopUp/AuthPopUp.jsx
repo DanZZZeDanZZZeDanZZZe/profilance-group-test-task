@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { PopUp } from '../PopUp';
 import { AppContext } from '../App';
+import commonStyles from '../../common-styles.module.scss';
 
 export const AuthPopUp = () => {
   const { authPopUp, auth } = useContext(AppContext);
@@ -39,7 +40,7 @@ export const AuthPopUp = () => {
           <label htmlFor='password'>Password</label>
           <input type='password' name='password' placeholder='password' />
         </div>
-        <button className='primary'>Войти</button>
+        <button className={commonStyles['project-button']}>Войти</button>
       </form>
     </PopUp>
   );

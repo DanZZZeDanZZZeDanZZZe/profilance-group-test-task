@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { AppContext } from '../App';
 
 import styles from './Header.module.scss';
+import commonStyles from '../../common-styles.module.scss';
+console.log(commonStyles);
 
 export const Header = () => {
   const { authPopUp, auth } = useContext(AppContext);
@@ -20,11 +22,19 @@ export const Header = () => {
         <Link to='/news'>News</Link>
       </nav>
       {auth.isSuccess ? (
-        <button type='button' onClick={auth.close}>
+        <button
+          type='button'
+          className={commonStyles['project-button']}
+          onClick={auth.close}
+        >
           Выход
         </button>
       ) : (
-        <button type='button' onClick={authPopUp.open}>
+        <button
+          type='button'
+          className={commonStyles['project-button']}
+          onClick={authPopUp.open}
+        >
           Вход
         </button>
       )}
