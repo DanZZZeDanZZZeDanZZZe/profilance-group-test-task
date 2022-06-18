@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { usePopUpState, useAuthState, useNewsState } from '../../hooks';
+import { AuthPopUp } from '../AuthPopUp';
 import { Header } from '../Header/Header';
 import { MainPage } from '../MainPage';
 import { NewsPage } from '../NewsPage';
@@ -13,6 +14,7 @@ export const App = () => {
   const authPopUp = usePopUpState();
   const auth = useAuthState();
   const news = useNewsState();
+  console.log(auth, authPopUp, news);
 
   return (
     <AppContext.Provider
@@ -23,6 +25,7 @@ export const App = () => {
       }}
     >
       <BrowserRouter>
+        <AuthPopUp />
         <Header />
         <main className={styles['page-wrapper']}>
           <Routes>
