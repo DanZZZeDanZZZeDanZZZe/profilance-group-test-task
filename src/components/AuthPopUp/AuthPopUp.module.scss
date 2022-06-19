@@ -1,15 +1,16 @@
 .auth-form {
-    &__login-field, &__password-field {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        min-width: 200px;
-        width: 40%;
-        height: 3.5rem;
-        margin-top: 1rem;
-    }
+  &__login-field,
+  &__password-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 200px;
+    width: 40%;
+    height: 3.5rem;
+    margin-top: 1rem;
+  }
 
-    &__submit-button {
-        margin-top: 1rem
-    }
+  &__submit-button {
+    margin-top: 1rem;
+  }
 }

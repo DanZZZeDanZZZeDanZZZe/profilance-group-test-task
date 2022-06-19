@@ -17,7 +17,7 @@
     justify-content: center;
 
     @media screen and (max-width: 900px) {
-        grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
     }
   }
 
@@ -44,24 +44,26 @@
     font-size: 0.8rem;
   }
 
-  &__approve-button, &__remove-button {
+  &__approve-button,
+  &__remove-button {
     margin-top: 0.5rem;
     margin-right: 0.5rem;
   }
 }
 
 .add-news-form {
-    &__title-field, &__text-field {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        min-width: 200px;
-        width: 40%;
-        height: 3.5rem;
-        margin-top: 1rem;
-    }
+  &__title-field,
+  &__text-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 200px;
+    width: 40%;
+    height: 3.5rem;
+    margin-top: 1rem;
+  }
 
-    &__submit-button {
-        margin-top: 1rem
-    }
+  &__submit-button {
+    margin-top: 1rem;
+  }
 }
