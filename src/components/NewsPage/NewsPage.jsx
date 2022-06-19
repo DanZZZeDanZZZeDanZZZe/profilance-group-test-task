@@ -64,7 +64,8 @@ const AddNewsContols = ({ addNewsHandler }) => {
 export const NewsPage = () => {
   const { auth, news } = useContext(AppContext);
 
-  const showedNews = auth.isAdmin ? news.allContent : news.acceptedContent;
+  const showedNews =
+    auth.isAdmin || auth.isUser ? news.allContent : news.acceptedContent;
 
   return (
     <div className={styles['news-page']}>
