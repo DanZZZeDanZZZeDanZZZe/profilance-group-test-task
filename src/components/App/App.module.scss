@@ -1,6 +1,6 @@
 .page-wrapper {
   background-color: var(--color-secondary);
-  height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - var(--header-height));
   display: flex;
   padding-top: 1rem;
   justify-content: center;
