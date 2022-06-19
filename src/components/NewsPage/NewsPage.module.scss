@@ -1,6 +1,15 @@
 .news-page {
   width: 80%;
 
+  &__filter-input {
+    width: 100%;
+    max-width: 300px;
+    background-color: white;
+    display: block;
+    margin: 0 auto 2rem auto;
+    font-size: 1rem;
+  }
+
   &__list {
     display: grid;
     grid-template-columns: repeat(2, minmax(400px, 35vw));
