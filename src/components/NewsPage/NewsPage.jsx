@@ -77,7 +77,6 @@ export const NewsPage = () => {
       : showedNews;
 
   const filterInputOnChangeHandler = (e) => {
-    console.log(e.target.value);
     setFilterString(e.target.value);
   };
 

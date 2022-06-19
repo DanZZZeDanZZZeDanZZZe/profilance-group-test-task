@@ -14,7 +14,6 @@ export const App = () => {
   const authPopUp = usePopUpState();
   const auth = useAuthState();
   const news = useNewsState();
-  console.log(auth, authPopUp, news);
 
   return (
     <AppContext.Provider

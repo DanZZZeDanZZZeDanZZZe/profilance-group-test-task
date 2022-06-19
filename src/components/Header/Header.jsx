@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import { AppContext } from '../App';
 
 import styles from './Header.module.scss';
-import commonStyles from '../../common-styles.module.scss';
-console.log(commonStyles);
 
 export const Header = () => {
   const { authPopUp, auth } = useContext(AppContext);
