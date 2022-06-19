@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { PopUp } from '../PopUp';
 import { AppContext } from '../App';
 import commonStyles from '../../common-styles.module.scss';
+import styles from './AuthPopUp.module.scss';
 
 export const AuthPopUp = () => {
   const { authPopUp, auth } = useContext(AppContext);
@@ -32,15 +33,29 @@ export const AuthPopUp = () => {
     >
       {auth.errorMessage}
       <form onSubmit={onSubmit}>
-        <div>
-          <label htmlFor='login'>Login</label>
-          <input type='login' name='login' placeholder='login' />
+        <div className={styles['auth-form__login-field']}>
+          <label htmlFor='login'>Login: </label>
+          <input
+            type='login'
+            name='login'
+            placeholder='login'
+            className={commonStyles['project-input']}
+          />
         </div>
-        <div>
-          <label htmlFor='password'>Password</label>
-          <input type='password' name='password' placeholder='password' />
+        <div className={styles['auth-form__password-field']}>
+          <label htmlFor='password'>Password: </label>
+          <input
+            type='password'
+            name='password'
+            placeholder='password'
+            className={commonStyles['project-input']}
+          />
         </div>
-        <button className={commonStyles['project-button']}>Войти</button>
+        <button
+          className={`${commonStyles['project-button']} ${styles['auth-form__submit-button']}`}
+        >
+          Войти
+        </button>
       </form>
     </PopUp>
   );
