@@ -8,14 +8,19 @@
   bottom: 0;
   margin: auto;
   background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: self-start;
+  justify-content: center;
+  z-index: 100;
 
   &__wrapper {
-    position: absolute;
-    left: 25%;
-    right: 25%;
-    top: 25%;
-    bottom: 25%;
-    margin: auto;
-    background: white;
+    max-width: 600px;
+    width: 100%;
+    min-height: 300px;
+    margin-top: 100px;
+  }
+
+  &__header {
+    margin-bottom: 1rem;
   }
 }
