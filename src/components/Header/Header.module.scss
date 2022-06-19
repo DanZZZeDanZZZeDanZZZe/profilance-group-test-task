@@ -1,13 +1,17 @@
 .header {
   box-sizing: border-box;
   height: var(--header-height);
-  width: 100vw;
   background: var(--color-primary);
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   align-items: center;
+
+  &__logo {
+    width: 200px;
+    min-width: 50px;
+  }
 
   &__nav {
     flex-grow: 1;
@@ -15,5 +19,20 @@
     align-items: center;
     justify-content: space-between;
     margin-right: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  &__auth-button {
+    font-weight: bold;
+    background-color: inherit;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

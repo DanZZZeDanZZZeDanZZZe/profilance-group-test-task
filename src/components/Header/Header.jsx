@@ -17,6 +17,7 @@ export const Header = () => {
           <img
             src='https://static.tildacdn.com/tild3638-3338-4136-b038-313132306438/Group_640.svg'
             alt='Логотип'
+            className={styles['header__logo']}
           />
         </Link>
         <Link to='/news'>News</Link>
@@ -24,7 +25,7 @@ export const Header = () => {
       {auth.isSuccess ? (
         <button
           type='button'
-          className={commonStyles['project-button']}
+          className={styles['header__auth-button']}
           onClick={auth.close}
         >
           Выход
@@ -32,7 +33,7 @@ export const Header = () => {
       ) : (
         <button
           type='button'
-          className={commonStyles['project-button']}
+          className={styles['header__auth-button']}
           onClick={authPopUp.open}
         >
           Вход
