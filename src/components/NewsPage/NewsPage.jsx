@@ -24,15 +24,27 @@ const AddNewsContols = ({ addNewsHandler }) => {
       {popUp.isShow && (
         <PopUp onClose={popUp.close}>
           <form onSubmit={onSubmitHandler}>
-            <div>
+            <div className={styles['add-news-form__title-field']}>
               <label htmlFor='title'>title</label>
-              <input type='title' name='title' placeholder='title' />
+              <input
+                type='title'
+                name='title'
+                placeholder='title'
+                className={commonStyles['project-input']}
+              />
             </div>
-            <div>
+            <div className={styles['add-news-form__text-field']}>
               <label htmlFor='text'>text</label>
-              <input type='text' name='text' placeholder='text' />
+              <input
+                type='text'
+                name='text'
+                placeholder='text'
+                className={commonStyles['project-input']}
+              />
             </div>
-            <button className={commonStyles['project-button']}>
+            <button
+              className={`${commonStyles['project-button']} ${styles['add-news-form__submit-button']}`}
+            >
               Добавить новость
             </button>
           </form>
@@ -40,7 +52,7 @@ const AddNewsContols = ({ addNewsHandler }) => {
       )}
       <button
         type='button'
-        className={commonStyles['project-button']}
+        className={`${commonStyles['project-button']} ${styles['news-page__add-button']}`}
         onClick={popUp.open}
       >
         Добавить новость
@@ -58,16 +70,19 @@ export const NewsPage = () => {
     <div className={styles['news-page']}>
       <div className={styles['news-page__list']}>
         {showedNews.map(({ id, title, text, date, isApproved }) => (
-          <div key={id} className={styles['news-page__list-item']}>
-            <p>{title}</p>
-            <p>{text}</p>
-            <p>{date}</p>
+          <div
+            key={id}
+            className={`${commonStyles['project-box']} ${styles['news-page__list-item']} ${styles['news-block']}`}
+          >
+            <p className={styles['news-block__title']}>{title}</p>
+            <p className={styles['news-block__text']}>{text}</p>
+            <p className={styles['news-block__date']}>{date}</p>
             {auth.isAdmin && (
-              <>
+              <div>
                 {!isApproved && (
                   <button
                     type='button'
-                    className={commonStyles['project-button']}
+                    className={`${commonStyles['project-button']} ${styles['news-block__approve-button']}`}
                     onClick={() => news.approve(id)}
                   >
                     Одобрить новость
@@ -75,12 +90,12 @@ export const NewsPage = () => {
                 )}
                 <button
                   type='button'
-                  className={commonStyles['project-button']}
+                  className={`${commonStyles['project-button']} ${styles['news-block__remove-button']}`}
                   onClick={() => news.remove(id)}
                 >
                   Удалить новость
                 </button>
-              </>
+              </div>
             )}
           </div>
         ))}

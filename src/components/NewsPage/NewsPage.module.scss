@@ -1,6 +1,58 @@
-.app {
-  &__header {
-    height: 40px;
-    width: 100vw;
+.news-page {
+  width: 80%;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(400px, 35vw));
+    grid-gap: 1rem;
+    justify-content: center;
+
+    @media screen and (max-width: 900px) {
+        grid-template-columns: 1fr;
+    }
   }
+
+  &__add-button {
+    display: block;
+    margin: auto;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+.news-block {
+  &__title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    overflow-wrap: anywhere;
+  }
+
+  &__text {
+    overflow-wrap: anywhere;
+  }
+
+  &__date {
+    font-size: 0.8rem;
+  }
+
+  &__approve-button, &__remove-button {
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.add-news-form {
+    &__title-field, &__text-field {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-width: 200px;
+        width: 40%;
+        height: 3.5rem;
+        margin-top: 1rem;
+    }
+
+    &__submit-button {
+        margin-top: 1rem
+    }
 }
