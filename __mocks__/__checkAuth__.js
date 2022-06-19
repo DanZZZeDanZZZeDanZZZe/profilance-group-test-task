@@ -2,11 +2,11 @@ const ERROR_MESSAGE = 'Неверные данные пользователя';
 
 const USERS = {
   ADMIN: {
-    password: 'q111',
+    password: '1',
     isAdmin: true,
   },
   USER: {
-    password: 'q222',
+    password: '2',
     isAdmin: false,
   },
 };
